@@ -31,7 +31,7 @@ var ctx = c.getContext('2d');
             ctx.fillStyle = "red";
             pillarX -= 12;
             pillarX < -pillarWidth && ((pillarX = canvasSize), (NorthPillarBottomY = gap * Math.random()));
-            ctx.fillRect(pillarX, 0, pillarWidth, NorthPillarBottomY); //Draw top pipe
+            ctx.fillRect(pillarX, 5, pillarWidth, NorthPillarBottomY); //Draw top pipe
             ctx.fillRect(pillarX, NorthPillarBottomY + gap, pillarWidth, canvasSize); //Draw bottom pipe
             ctx.fillStyle = "black"
             ctx.fillText(`Score: ${score}`, 20, 35); score++;scor.play();
