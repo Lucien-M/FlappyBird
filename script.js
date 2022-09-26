@@ -22,11 +22,11 @@ var ctx = c.getContext('2d');
        var gap = 250;  
        var canvasSize = 500;
        var pillarX = 500;
-        c.onclick = () => ((bDY = 12), (flap.play()))
+        c.onclick = () => ((bDY = 9), (flap.play()))
         setInterval(() => {
              ctx.fillStyle = "#009A17";
             ctx.fillRect(0, 0, canvasSize, canvasSize); //Draw grass green
-            bY -= bDY -= 0.5; // Gravity
+            bY -= bDY -= 1; // Gravity
             ctx.drawImage(bird, bX, bY, bSize * (1.5), bSize); // Draw bird
             ctx.fillStyle = "red";
             pillarX -= 12;
