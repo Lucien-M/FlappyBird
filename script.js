@@ -34,9 +34,9 @@ var ctx = c.getContext('2d');
             ctx.fillRect(pillarX, 0, pillarWidth, NorthPillarBottomY); //Draw top pipe
             ctx.fillRect(pillarX, NorthPillarBottomY + gap, pillarWidth, canvasSize); //Draw bottom pipe
             ctx.fillStyle = "black"
-            ctx.fillText(`Score: ${score}`, 12, 25); score++;scor.play();
+            ctx.fillText(`Score: ${score}`, 20, 35); score++;scor.play();
             bestScore = bestScore < score ? score : bestScore;
-            ctx.fillText(`Best: ${bestScore}`, 20, 60);
+            ctx.fillText(`Best: ${bestScore}`, 0, 50);
             (((bY < NorthPillarBottomY || bY > NorthPillarBottomY + gap) && pillarX < bSize * (1.5)) || bY > canvasSize) && // Bird falls off screen
             ((bDY = 0), (bY = 250), (pillarX = canvasSize), (score = 0), die.play()); // Bird died
         }, interval)                     
