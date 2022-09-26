@@ -1,9 +1,6 @@
 body{
     height: 10vh; 
-    background-image: url(Bckg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background:rgb(114, 144, 193);
     text-align: center;
 }
 
