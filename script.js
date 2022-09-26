@@ -4,8 +4,8 @@ var ctx = c.getContext('2d');
         bird.src = "bird.png" 
         var scor = new Audio();
        scor.src = "score.wav";
-       var die = new Audio();
-       die.src = "die.wav";
+       var hit = new Audio();
+       hit.src = "hit.wav";
        var flap = new Audio();
        flap.src = "flap.wav";
        var hit = new Audio();
@@ -36,7 +36,7 @@ var ctx = c.getContext('2d');
             ctx.fillStyle = "black"
             ctx.fillText(`Score: ${score}`, 20, 35); score++;scor.play();
             bestScore = bestScore < score ? score : bestScore;
-            ctx.fillText(`Best: ${bestScore}`, 0, 50);
+            ctx.fillText(`Best: ${bestScore}`, 20, 60);
             (((bY < NorthPillarBottomY || bY > NorthPillarBottomY + gap) && pillarX < bSize * (1.5)) || bY > canvasSize) && // Bird falls off screen
-            ((bDY = 0), (bY = 250), (pillarX = canvasSize), (score = 0), die.play()); // Bird died
+            ((bDY = 0), (bY = 250), (pillarX = canvasSize), (score = 0), hit.play()); // Bird died
         }, interval)                     
