@@ -26,7 +26,7 @@ var ctx = c.getContext('2d');
         setInterval(() => {
              ctx.fillStyle = "#009A17";
             ctx.fillRect(0, 0, canvasSize, canvasSize); //Draw grass green
-            bY -= bDY -= 1; // Gravity
+            bY -= bDY -= 0.5; // Gravity
             ctx.drawImage(bird, bX, bY, bSize * (1.5), bSize); // Draw bird
             ctx.fillStyle = "red";
             pillarX -= 12;
