@@ -4,6 +4,12 @@ var ctx = c.getContext('2d');
         bird.src = "bird.png" 
         var scor = new Audio();
        scor.src = "score.wav";
+       var die = new Audio();
+       die.src = "die.wav";
+       var flap = new Audio();
+       flap.src = "flap.wav";
+       var hit = new Audio();
+       hit.src = "hit.wav";
        var bX = 0;
        var bDY = 0;
        var score = 0;
@@ -16,9 +22,9 @@ var ctx = c.getContext('2d');
        var gap = 250;  
        var canvasSize = 500;
        var pillarX = 500;
-        c.onclick = () => (bDY = 12)
+        c.onclick = () => ((bDY = 12), (flap.play()))
         setInterval(() => {
-            ctx.fillStyle = "#009A17";
+             ctx.fillStyle = "#009A17";
             ctx.fillRect(0, 0, canvasSize, canvasSize); //Draw grass green
             bY -= bDY -= 1; // Gravity
             ctx.drawImage(bird, bX, bY, bSize * (1.5), bSize); // Draw bird
@@ -32,5 +38,5 @@ var ctx = c.getContext('2d');
             bestScore = bestScore < score ? score : bestScore;
             ctx.fillText(`Best: ${bestScore}`, 20, 60);
             (((bY < NorthPillarBottomY || bY > NorthPillarBottomY + gap) && pillarX < bSize * (1.5)) || bY > canvasSize) && // Bird falls off screen
-            ((bDY = 0), (bY = 250), (pillarX = canvasSize), (score = 0)); // Bird died
+            ((bDY = 0), (bY = 250), (pillarX = canvasSize), (score = 0), die.play()); // Bird died
         }, interval)                     
